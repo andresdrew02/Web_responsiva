@@ -1,0 +1,82 @@
+@use "fonts";
+@use "sizes";
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: fonts.$lower_font;
+}
+
+header {
+  display: flex;
+  flex-direction: row;
+  padding: 1rem;
+  width: 95%;
+  height: sizes.$header_height;
+  box-shadow: rgba(0, 0, 0, 0.075) 0px 25px 20px -20px;
+
+  .mobile_header{
+    display:none;
+  }
+
+  * {
+    font-family: fonts.$upper_font;
+    font-weight: 400;
+  }
+  .desktop_header {
+    display: flex;
+    flex-direction: row;
+    width: 98%;
+    align-items: center;
+    ul,
+    li {
+      display: inline-block;
+      text-align: center;
+      margin: 10px;
+      text-transform: uppercase;
+      font-size: sizes.$header_font_size;
+    }
+
+    .icons{
+        margin-left:auto;
+    }
+
+    .icons * {
+      font-size: 1.2rem;
+    }
+  }
+
+  img {
+    width: 85px;
+    height: 60px;
+    max-width: 100%;
+  }
+}
+
+a:any-link {
+  color: black;
+}
+
+//tablet
+@media screen and (max-width: 790px) {
+  header{
+    height:calc(sizes.$header_height - 20px);
+    img{
+        width:70px;
+        height: 50px;
+    }
+    .desktop_header{
+        display: none;
+    }
+    .mobile_header{
+        width:100%;
+        display:flex;
+        justify-content:space-between;
+        align-items: center;
+        i{
+            font-size:1.7rem;
+        }
+    }
+  }
+  
+}
