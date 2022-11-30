@@ -68,7 +68,7 @@ article {
 }
 article .scrollable-categories {
   overflow: auto;
-  width: 70%;
+  width: 100%;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 1rem;
@@ -130,7 +130,8 @@ main h1 {
   width: 100%;
   background-color: white;
 }
-.responsive-images .responsive-image-card .responsive-image picture, .responsive-images .responsive-image-card .responsive-image img {
+.responsive-images .responsive-image-card .responsive-image picture,
+.responsive-images .responsive-image-card .responsive-image img {
   width: 100%;
 }
 .responsive-images .responsive-image-card .responsive-title {
@@ -152,10 +153,34 @@ main h1 {
   font-weight: 500;
 }
 
+.responsive-table {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
 .responsive-table table {
   border-collapse: collapse;
   color: rgb(51, 51, 51);
   font-weight: 400;
+  width: 70%;
+}
+.responsive-table table .desktop-hidden-tr {
+  display: none;
+}
+.responsive-table table tr td {
+  padding: 2rem;
+}
+.responsive-table table tr td .mobile-hidden {
+  display: none;
+}
+.responsive-table table tr .mobile-hidden-image {
+  display: none !important;
+}
+.responsive-table table i {
+  margin-left: 0.3rem;
+}
+.responsive-table table .table-image p {
+  text-transform: uppercase;
 }
 .responsive-table table .table-image img {
   width: 10rem;
@@ -165,7 +190,9 @@ main h1 {
   text-align: center;
   width: 10rem;
 }
-.responsive-table table tr, .responsive-table table td, .responsive-table table th {
+.responsive-table table tr,
+.responsive-table table td,
+.responsive-table table th {
   padding: 1rem;
   border-bottom: 1px solid lightgray;
 }
@@ -195,8 +222,47 @@ main h1 {
   }
   header .mobile_header i {
     font-size: 1.7rem;
+    margin: 2rem;
   }
   .responsive-images {
     grid-template-columns: repeat(2, 1fr);
+  }
+  .responsive-table table .mobile-hidden-more-height {
+    height: 155px;
+  }
+  .responsive-table table .table-image img {
+    width: 5rem !important;
+    height: 5rem !important;
+  }
+  .responsive-table table .table-image p {
+    margin-top: 1rem;
+  }
+  .responsive-table table .mobile-hidden-tr {
+    display: none;
+  }
+  .responsive-table table .desktop-hidden-tr {
+    display: table-row;
+  }
+  .responsive-table table .desktop-hidden {
+    display: none;
+  }
+  .responsive-table .simulate-th {
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    margin-top: -2.3rem;
+  }
+  .responsive-table tr .mobile-hidden {
+    display: flex !important;
+    flex-direction: column;
+  }
+}
+@media screen and (max-width: 436px) {
+  .responsive-table {
+    overflow-y: scroll;
+  }
+  .responsive-table table {
+    margin-left: 5rem;
   }
 }/*# sourceMappingURL=index.css.map */

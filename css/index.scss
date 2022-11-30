@@ -7,7 +7,7 @@
   font-family: fonts.$lower_font;
 }
 
-body{
+body {
   background-color: whitesmoke;
 }
 
@@ -24,7 +24,6 @@ header {
   }
 
   * {
-    
   }
   .desktop_header {
     padding: 1rem;
@@ -69,7 +68,7 @@ article {
   margin: 2rem;
   .scrollable-categories {
     overflow: auto;
-    width: 70%;
+    width: 100%;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 1rem;
@@ -102,7 +101,7 @@ article {
         h1 {
           margin-left: 1rem;
           font-family: fonts.$upper_font;
-          font-size:1.2rem;
+          font-size: 1.2rem;
           font-weight: 500;
         }
       }
@@ -124,77 +123,102 @@ article {
   }
 }
 
-main h1{
-  margin-bottom:2rem;
-  margin-top:2rem;
-  font-size:1.4rem;
+main h1 {
+  margin-bottom: 2rem;
+  margin-top: 2rem;
+  font-size: 1.4rem;
   font-weight: normal;
 }
 
-.responsive-images{
-  display:grid;
-  width:100%;
-  grid-template-columns: repeat(3,1fr);
-  gap:1rem;
-  .responsive-image-card{
-    width:100%;
+.responsive-images {
+  display: grid;
+  width: 100%;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  .responsive-image-card {
+    width: 100%;
     background-color: white;
-    .responsive-image{
-      picture,img{
+    .responsive-image {
+      picture,
+      img {
         width: 100%;
       }
     }
-    .responsive-title{
-      margin:1rem;
-      h1{
+    .responsive-title {
+      margin: 1rem;
+      h1 {
         font-family: fonts.$upper_font;
-        font-size:1rem;
+        font-size: 1rem;
         text-transform: uppercase;
-        margin-bottom:.35rem;
+        margin-bottom: 0.35rem;
       }
-      h2{
-        font-size:1rem;
-        font-weight:500;
-        color:gray;
+      h2 {
+        font-size: 1rem;
+        font-weight: 500;
+        color: gray;
       }
-      .price{
-        color:black;
+      .price {
+        color: black;
         font-weight: 500;
       }
     }
   }
 }
 
-.responsive-table{
-  table{
+.responsive-table {
+  width:100%;
+  display:flex;
+  justify-content: center;
+  table {
     border-collapse: collapse;
-    color:rgb(51, 51, 51);
+    color: rgb(51, 51, 51);
     font-weight: 400;
-    .table-image{
-      
-      img{
-        width:10rem;
+    width: 70%;
+    .desktop-hidden-tr {
+      display: none;
+    }
+    tr {
+      td {
+        .mobile-hidden {
+          display: none;
+        }
+        padding: 2rem;
+      }
+      .mobile-hidden-image {
+        display: none !important;
+      }
+    }
+    i {
+      margin-left: 0.3rem;
+    }
+    .table-image {
+      p {
+        text-transform: uppercase;
+      }
+      img {
+        width: 10rem;
         height: 10rem;
       }
     }
-    td{
+    td {
       text-align: center;
-      width:10rem;
+      width: 10rem;
     }
-    tr,td,th{
-      padding:1rem;
-      border-bottom:1px solid lightgray;
+    tr,
+    td,
+    th {
+      padding: 1rem;
+      border-bottom: 1px solid lightgray;
     }
-    th{
-      color:rgb(17, 17, 17);
+    th {
+      color: rgb(17, 17, 17);
       font-family: fonts.$upper_font;
       text-transform: uppercase;
-      font-size:.8rem;
+      font-size: 0.8rem;
     }
   }
 }
 
-//tablet
 @media screen and (max-width: 790px) {
   header {
     height: calc(sizes.$header_height - 20px);
@@ -212,12 +236,60 @@ main h1{
       align-items: center;
       i {
         font-size: 1.7rem;
+        margin: 2rem;
       }
     }
   }
 
-  .responsive-images{
-    grid-template-columns: repeat(2,1fr);
+  .responsive-images {
+    grid-template-columns: repeat(2, 1fr);
   }
 
+  .responsive-table {
+    table {
+      .mobile-hidden-more-height{
+        height:155px;
+      }
+      .table-image {
+        img {
+          width: 5rem !important;
+          height: 5rem !important;
+        }
+        p{
+          margin-top:1rem;
+        }
+      }
+      .mobile-hidden-tr {
+        display: none;
+      }
+      .desktop-hidden-tr {
+        display: table-row;
+      }
+      .desktop-hidden {
+        display: none;
+      }
+    }
+    .simulate-th {
+      text-transform: uppercase;
+      font-weight: 500;
+      font-size: 1rem;
+      margin-bottom: 1rem;
+      margin-top: -2.3rem;
+    }
+    tr {
+      .mobile-hidden {
+        display: flex !important;
+        flex-direction: column;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 436px) {
+  .responsive-table{
+    table{
+      margin-left:5rem;
+    }
+    overflow-y: scroll;
+  }
 }
