@@ -288,8 +288,24 @@ main h1 {
 @media screen and (max-width: 436px) {
   .responsive-table{
     table{
-      margin-left:5rem;
+      margin-left:5rem; 
     }
     overflow-y: scroll;
+  }
+}
+
+@media screen and (max-width: 306px){
+  .responsive-table{
+    table{
+      margin-left:10rem; /*En resoluciones muy pequeñas, como el overflow-y está en scroll ,para que no se corte, se le añade un margin-left muy grande para poder ver la tabla completa sin que se corte*/
+    }
+  }
+}
+
+@media screen and (max-width: 240px){
+  .responsive-table{
+    table{
+      margin-left:15rem; /*En resoluciones muy pequeñas, como el overflow-y está en scroll ,para que no se corte, se le añade un margin-left muy grande para poder ver la tabla completa sin que se corte*/
+    }
   }
 }

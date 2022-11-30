@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&family=Roboto:wght@400;500&display=swap");
 * {
   margin: 0;
@@ -264,5 +265,15 @@ main h1 {
   }
   .responsive-table table {
     margin-left: 5rem;
+  }
+}
+@media screen and (max-width: 306px) {
+  .responsive-table table {
+    margin-left: 10rem; /*En resoluciones muy pequeñas, como el overflow-y está en scroll ,para que no se corte, se le añade un margin-left muy grande para poder ver la tabla completa sin que se corte*/
+  }
+}
+@media screen and (max-width: 240px) {
+  .responsive-table table {
+    margin-left: 15rem; /*En resoluciones muy pequeñas, como el overflow-y está en scroll ,para que no se corte, se le añade un margin-left muy grande para poder ver la tabla completa sin que se corte*/
   }
 }/*# sourceMappingURL=index.css.map */
